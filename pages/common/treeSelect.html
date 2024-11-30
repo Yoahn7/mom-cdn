@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>请选择</title>
+    <script type="text/javascript" src="/cdnDomain/js/meta.js"></script>
+    <style>
+        .ztree {height:99%;}
+        .searchGroup {right:10px; position:absolute; height:26px; width:130px; z-index: 2;}
+        .searchGroup .btn {width: 27px;}
+        .addRoot {right: 110px; border-radius: 0; border: 1px solid #ccc;}
+    </style>
+    <script type="text/javascript">
+        /**
+         * 如果url不为空，则调用接口获取ztree数据；否则直接使用rows渲染zetree数据。所以注意rows和url、data的传参
+         */
+        var url,    //调用接口url
+            data,   //调用接口参数
+            rows,   //已有数据
+            defaultVals,    //默认值
+            setting,    //配置项
+            saveApi,    //保存节点接口配置（url，data）
+            deleteApi;  //删除节点接口配置（url，data）
+        window.setConfig=function(url_, data_, defaultVals_, setting_, saveApi_, deleteApi_) {
+            url=url_, data=data_, defaultVals=defaultVals_, setting=setting_;
+            saveApi = saveApi_, deleteApi = deleteApi_;
+        }
+        window.setConfigData=function(rows_, defaultVals_, setting_, saveApi_, deleteApi_) {
+            rows = rows_, defaultVals=defaultVals_, setting=setting_;
+            saveApi = saveApi_, deleteApi = deleteApi_;
+        }
+    </script>
+</head>
+
+<body id="treeSelect" class="wrapper-white">
+    <span class="searchGroup">
+        <input type="text" id="ztree_searchText" class="form-control" placeholder="关键字筛选">
+        <button type="button" class="btn btn-white searchAll">
+            <i class="fa fa-search"></i>
+         </button>
+         <button type="button" class="btn btn-white addRoot hide">
+            <i class="fa fa-plus"></i>
+        </button>
+    </span>
+    <ul id="tree" class="ztree"></ul>
+    <script>
+        function load(){
+            includeRJ("treeSelect.min.js");
+        }
+    </script>
+</body>
+</html>

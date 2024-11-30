@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加附件--上传附件</title>
+    <script type="text/javascript" src="/cdnDomain/js/meta.js"></script>
+    <style>
+        body {overflow-x: hidden;}
+        #dropzone {
+            margin: 0 auto;
+            width: 95%;
+            min-height: 240px;
+            border-radius: 3px;
+            padding: 10px 0 0;
+            box-sizing: border-box;
+            position: relative;
+        }
+        #dropzone select {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .dropzone, .dropzone > div, input[type=file] {
+            display: block;
+        }
+
+        #dropzone .dropzone {
+            border: 3px dashed rgb(155, 193, 224);
+            min-height: 245px;
+        }
+
+        input[type=file] {
+            z-index: 2001;
+            opacity: 0;
+        }
+        #dropzone .dropzone > .dz-message {
+            text-align: center;
+            margin-top: 15%;
+        }
+        .dropzone .dz-preview .dz-progress {
+            opacity: 0 !important;
+        }
+        .dropzone > .dz-message > span {
+            line-height: 100%;
+            color: rgb(175, 175, 175);
+            font-size: 20px;
+        }
+        #dropzone-upload {
+            background-color: rgb(255, 168, 45) !important;
+            color: rgb(255, 255, 255) !important;
+            font-size: 13px;
+            border: 1px solid rgb(231, 231, 231);
+            min-width: 55px;
+            border-radius: 5px;
+            line-height: 25px;
+            cursor: pointer;
+            margin-bottom: 15px;
+            display: block;
+        }
+        #dropzone-upload:active {
+            opacity: .8;
+        }
+        #oreType {
+            font-family: "Microsoft YaHei UI Light";
+            box-sizing: border-box;
+            padding: 5px;
+            border: 2px solid #cfcfcf;
+            border-radius: 3px;
+            text-align: center;
+            color: gray;
+        }
+        #oreType option {
+            text-align: center;
+            line-height: 100%;
+        }
+        #orespecies {
+            margin-left: 16px;
+        }
+    </style>
+    <script type="text/javascript">
+        var serverUrl, optionsParam;
+        window.setConfig=function(serverUrl_, options_) {
+            serverUrl = serverUrl_;
+            optionsParam = options_||{};
+        }
+    </script>
+</head>
+<body id="fileUploadWin">
+<input type="hidden" id="relateId" value="">
+<div id="uploader" class="wu-example">
+    <div class="queueList">
+        <div id="dndArea" class="placeholder">
+            <span class="dndArea-fileImg"></span>
+            <div id="filePicker" class="webuploader-container">
+                <div class="webuploader-pick">请选择</div>
+                <div id="rt_rt_1db01l7bdasf1ol6bg8e4g18051"
+                     style="position: absolute; top: 0px; left: 448px; width: 168px; height: 44px; overflow: hidden; bottom: auto; right: auto;">
+                    <input type="file" name="file" class="webuploader-element-invisible" multiple="multiple"
+                           accept="image/*"><label
+                        style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label>
+                </div>
+            </div>
+            <p>或将文件拖到这里，单次最多可选10个</p>
+        </div>
+        <ul class="filelist"></ul>
+    </div>
+
+    <div class="statusBar" style="display:none;">
+        <div class="progress" style="display: none;">
+            <span class="text">0%</span>
+            <span class="percentage" style="width: 0%;"></span>
+        </div>
+        <div class="info">共0张（0B），已上传0张</div>
+        <div class="btns">
+            <div id="filePicker2" class="webuploader-container hidden"></div>
+            <div id="uploadBtn" class=" uploadBtn state-pedding hidden">开始上传</div>
+            <div id="okBtn" class="okBtn">确定</div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    includeRJ("webUploadWin.min.js");
+</script>
+</body>
+</html>

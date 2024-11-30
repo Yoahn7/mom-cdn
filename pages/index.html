@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <script type="text/javascript" src="/cdnDomain/js/meta.js"></script>
+</head>
+<body>
+    <p>正在进入系统....</p>
+    <!-- 使用ifram解决不同的登录页暴露到地址栏被保存为书签的问题  -->
+    <iframe id="indexPage" style="width:100%;height:100%;overflow:hidden;" marginWidth="0" frameBorder="0" frameSpacing="0" scrolling="no"></iframe>
+    <script type="text/javascript">
+        includeRJ(cdnDomain+"/pages/indexCore");
+    </script>
+</body>
+</html>

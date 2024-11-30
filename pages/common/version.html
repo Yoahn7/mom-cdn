@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>版本记录</title>
+    <script type="text/javascript" src="/cdnDomain/js/meta.js"></script>
+    <style type="text/css">
+        .version {
+            color: #fff;
+            cursor: pointer;
+        }
+        .version-l {
+            width: 104px;
+            float: left;
+            text-align: right;
+        }
+        .version-l .tagFlag {
+            display: inline-block;
+            width: 38px;
+            height: 30px;
+            border: 1px solid #eaeaea;
+            text-align: center;
+            line-height: 28px;
+            color: #666;
+            background: #f8f8f8;
+            margin-top: -1px;
+        }
+        .version-l .tagFlag.tagFlag1 {
+            color: #f75c5c;
+        }
+        .version-l .versionDate {
+            padding-right: 17px;
+            line-height: 30px;
+            margin-top: 5px;
+            color: #666;
+        }
+        .version-r {
+            margin-left: 104px;
+            border-left: 1px solid #eaeaea;
+            padding: 10px 10px 10px 20px;
+            font-size: 14px;
+            line-height: 22px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        .version-item:nth-of-type(even) .version-r {
+            background: #f6f6f6;
+        }
+        .version-r p {font-size: 12px;}
+        .version-r h1 {
+            margin-bottom: 10px;
+        }
+        .version-r div > p {
+            padding-left: 15px;
+        }
+    </style>
+</head>
+<body id="version" class="wrapper-white">
+    <ul id="version-con">
+    </ul>
+    <script type="text/html" id="versionTpl">
+        {{each list as item }}
+            <li class="version-item">
+                <div class="version-l">
+                        <span class="tagFlag tagFlag{{item.tagFlag}}">
+                            {{if item.tagFlag == '1'}}
+                                <i class="fa fa-flag"></i>
+                                {{else}}
+                                <i class="fa fa-file-text"></i>
+                            {{/if}}
+                            </span>
+                    <p class="versionDate">{{item.versionDate}}</p>
+                </div>
+                <div class="version-r">
+                    <h1>版本号：{{item.version}}</h1>
+                    <p> 更新内容：</p>
+                    <div>
+                        <p>{{item.remark}}</p>
+                    </div>
+                </div>
+            </li>
+        {{/each}}
+    </script>
+    <script>
+        includeRJ('version.js');
+    </script>
+
+</body>
+</html>

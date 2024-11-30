@@ -1,0 +1,137 @@
+/*dataGrid start*/
+.datagrid .panel-body {padding: 0;}
+.tableItemBox {
+    margin-bottom: 20px;
+}
+
+.panel{border:1px solid #eaeaea;border-radius: 4px;}
+.panel-header {
+    background: #f5f5f6 !important;
+    padding: 5px 10px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    font-weight: bold;
+}
+
+.panel-title {
+    color: black;
+    height: 26px;
+    line-height: 26px;
+    font-size: 14px;
+}
+
+.panel-header, .panel-body {
+    border-color: #f5f5f6;
+}
+.datagrid-toolbar {
+    height: 0;
+    padding: 0;
+}
+/*.datagrid-header-row, .datagrid-row{height:24px;}*/
+.datagrid-header-inner{background: #f1f3f8;}
+.datagrid-cell, .datagrid-header .datagrid-cell span {
+    font-size: 14px;
+    line-height: 26px;
+    padding:2px 5px;
+}
+.datagrid-view .datagrid-editable-input{
+    height:26px !important;
+}
+.datagrid-btable tbody td .datagrid-cell{
+    overflow: hidden;
+    white-space: nowrap;
+    /*text-overflow: ellipsis;*/
+    word-break: break-all;
+    word-wrap: break-word;
+}
+.datagrid-btable tbody tr td:last-child, .datagrid-btable tr td:last-child,.datagrid-header-row td:last-child{
+    border-right: 0;
+}
+
+.datagrid-btable tr td:last-child {
+    position: relative;
+}
+
+.datagrid-view2 .datagrid-btable tr td:last-child:after {
+    position: absolute;
+    bottom: -1px;
+    right: -31px;
+    width: 30px;
+    border-bottom: 1px dotted #ccc;
+    content: "";
+}
+
+.datagrid-btable tr {
+    position: relative;
+}
+
+.datagrid-view2 .datagrid-btable tr.datagrid-row-over td:last-child div:after {
+    content: "";
+    background: #eaf2ff;
+    width: 50px;
+    position: absolute;
+    right: -50px;
+    top: 0;
+    bottom: 0;
+}
+
+.datagrid-btable > tbody > tr > td, .datagrid-htable td {
+    padding: 0 5px;
+}
+
+/*treeGrid start*/
+.datagrid-wrap{border:1px solid gainsboro;}
+.datagrid-header-row{height:44px;}
+.datagrid-row{height:36px;}
+.datagrid-btable > tbody > tr > td, .datagrid-htable td{padding:0;}
+.datagrid-header-row .datagrid-cell {
+    text-align: center !important;
+    padding:9px 5px;
+}
+.datagrid-header td, .datagrid-body td, .datagrid-footer td{
+    border-style:solid ;
+    border-color:gainsboro;
+}
+.datagrid-row-selected, .datagrid-row-over{
+    background-color: #fff;
+    color: #000;
+}
+.tree-icon{
+    display: none;
+}
+.datagrid-header-check, .datagrid-cell-check{
+    width: 50px;
+    height: 20px;
+}
+/*修改checkbox样式*/
+
+.datagrid-header-check input[type='checkbox'],.datagrid-cell-check  input[type='checkbox']{
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    border: none;
+    background: url('../../icheck/skins/flat/aero.png') no-repeat;
+    margin:0;
+}
+.datagrid-header-check input[type='checkbox']:hover,.datagrid-header-check input[type="checkbox"]:checked,.datagrid-cell-check input[type='checkbox']:hover,.datagrid-cell-check input[type="checkbox"]:checked {
+    outline: none;
+    background-position: -22px 0;
+}
+.datagrid-htable{background: #f1f3f8;}
+.datagrid-btable tr{background: #fff;}
+.datagrid-btable tr:nth-of-type(even){background: #fbfbfb;}
+.datagrid-btable tr:nth-of-type(odd):hover{background: #f5f5f5;}
+
+/* HiDPI support */
+@media not all, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi), (min-resolution: 1.25dppx) {
+    .datagrid-header-check input[type='checkbox'],.datagrid-cell-check  input[type='checkbox']{
+         background-image: url("../../icheck/skins/flat/aero@2x.png");
+        -webkit-background-size: 176px 22px;
+        background-size: 176px 22px;
+    }
+}
+
+
+/*.datagrid-header-inner{width:100% !important;}*/
+/*.datagrid-htable,.datagrid-btable{width:100%;}*/

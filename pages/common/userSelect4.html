@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择用户</title>
+    <script type="text/javascript" src="/cdnDomain/js/meta.js"></script>
+    <style>
+        .container {width:100%; height:422px; display:none;}
+        .userSelect .ztree {height:380px;}
+        .userSelect .ztree-nav {min-height:28px;}
+        .userSelect #assignRole{height:100%;overflow: hidden; padding:10px 0;}
+        .userSelect #assignRole>.col-sm-4{height:100%;overflow: auto;}
+        .userSelect .col-sm-4>div{line-height: 26px;}
+        .searchGroup {right:15px; position: absolute;}
+        .searchGroup input[type='text'] { width: 104px; height: 26px; font-size: 12px; padding-right: 32px;}
+        .searchGroup .btn { width: 27px; height: 25px; line-height: 22px; margin-left:-30px; }
+        .waitGroup .selectAll, .hasGroup .hasRevertBtn {margin-left:-5px;}
+    </style>
+    <script type="text/javascript">
+        var userSelect3=false;
+        var orgOptions, waitUserOptions, hasUserOptions;
+        window.setConfig=function(orgOptions_, waitUserOptions_, hasUserOptions_){
+            orgOptions=orgOptions_||{};
+            waitUserOptions=waitUserOptions_||{};
+            hasUserOptions=hasUserOptions_||{};
+            userSelect3 = true;
+        }
+    </script>
+</head>
+<body id="userSelect" class="userSelect">
+<div class="checkChangeBox">
+    <label><input type="radio" name="checkChange" value="0"> 按部门</label>
+    <label><input type="radio" name="checkChange" value="1"> 按角色</label>
+    <label><input type="radio" name="checkChange" value="2"> 按人员</label>
+</div>
+<div id="byOrg" class="container">
+    <div class="col-sm-4" style="border-right: 1px solid #A8A8A8;">
+        <div class="ztree-nav">所在部门：
+            <span class="searchGroup">
+                <input type="text" id="org_searchText" class="form-control" placeholder="关键字筛选">
+                <button type="button" class="btn btn-white bottom-shadow searchAll">
+                    <i class="fa fa-search"></i>
+                </button>
+            </span>
+        </div>
+        <ul id="officeTree" class="ztree"></ul>
+    </div>
+    <div class="col-sm-4">
+        <div class="ztree-nav">待选人员：
+            <span class="searchGroup waitGroup">
+                <input type="text" id="wait_searchText" class="form-control" placeholder="关键字筛选">
+                <button type="button" class="btn btn-white bottom-shadow searchAll">
+                    <i class="fa fa-search"></i>
+                </button>
+                <button type="button" class="btn btn-white bottom-shadow selectAll" title="全部">
+                    <i class="fa fa-check"></i>
+                </button>
+            </span>
+        </div>
+        <ul id="userTree" class="ztree"></ul>
+    </div>
+    <div class="col-sm-4" style="border-left: 1px solid #A8A8A8;">
+        <div class="ztree-nav">已选人员：
+            <span class="searchGroup hasGroup">
+                <input type="text" id="has_searchText" class="form-control" placeholder="关键字筛选">
+                <button type="button" class="btn btn-white bottom-shadow searchAll" title="查询">
+                    <i class="fa fa-search"></i>
+                </button>
+                <button type="button" class="btn btn-white bottom-shadow hasRevertBtn" title="还原">
+                    <i class="fa fa-reply"></i>
+                </button>
+            </span>
+        </div>
+        <ul id="selectedTree" class="ztree"></ul>
+    </div>
+</div>
+<div id="byRole" class="container">
+    根据角色
+</div>
+<div id="byEmp" class="container">
+    根据人员
+</div>
+<script>
+    function load(){
+        includeRJ("userSelect4.min.js");
+    }
+</script>
+</body>
+</html>

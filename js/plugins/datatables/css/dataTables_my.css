@@ -1,0 +1,121 @@
+@charset "UTF-8";
+ table.dataTable tbody td a {
+  margin: 0 3px;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+ }
+.table-bordered > tbody > tr > td, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > td, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > thead > tr > th {
+  border-left: 0;
+  border-bottom: 0;
+  vertical-align: middle; }
+/*有用到*/
+.dataTables_empty {
+  text-align: center;
+}
+
+.table.dataTable {
+  clear: both;
+  border: 1px solid gainsboro;
+  max-width: none !important;
+  border-right: none;
+  margin: 0;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background: #fbfbfb; }
+
+table.dataTable thead th {
+  line-height: 22px;
+  border-bottom: 0;
+  vertical-align: middle;
+  background: #f1f3f8;
+  white-space: nowrap;
+  border-bottom: none !important; }
+
+table.dataTable tbody td {
+  vertical-align: middle !important;
+  font-size: 12px;
+  white-space: nowrap;
+  padding: 3px 2px 4px !important;
+  line-height: 26px !important;
+}
+
+.table.dataTable thead tr th {
+  border-color: #ddd;
+  border-left: 0;
+  font-size: 13px;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: none;
+  vertical-align: middle;
+  padding: 11px 3px; }
+
+table.dataTable thead th:active,
+table.dataTable thead td:active {
+  outline: none; }
+
+table.dataTable thead .sorting,
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting_desc,
+table.dataTable thead .sorting_asc_disabled,
+table.dataTable thead .sorting_desc_disabled {
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+
+table.dataTable thead .sorting {
+  background-image: url("../images/sort_both.png"); }
+
+table.dataTable thead .sorting_asc {
+  background-image: url("../images/sort_asc.png"); }
+
+table.dataTable thead .sorting_desc {
+  background-image: url("../images/sort_desc.png"); }
+
+table.dataTable thead .sorting_asc_disabled {
+  background-image: url("../images/sort_asc_disabled.png"); }
+
+table.dataTable thead .sorting_desc_disabled {
+  background-image: url("../images/sort_desc_disabled.png"); }
+table.dataTable.no-footer {
+  border-bottom: 1px solid gainsboro !important; }
+
+/*datatable自带的搜索功能*/
+.dataTables_filter input[type='search'], .dataTables_filter input[type='text'] {
+  border: 1px solid #ccc;
+  outline: none;
+  line-height: 1.42857143;
+  background: #fff;
+  font-size: 14px;
+  height: 30px;
+  padding: 0 5px;
+  border-radius: 5px;
+  font-weight: normal; }
+.dataTables_wrapper .dataTables_filter{
+  margin-bottom:10px;
+}
+.dataTables_filter input[type='search']:focus, .dataTables_filter input[type='text']:focus {
+  border-color: #1ab394 !important;
+}
+
+table.dataTable, table.dataTable th, table.dataTable td{
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+}
+.dataTable{
+  overflow: auto;
+}
+.table.dataTable{
+  clear: none;
+
+}
+.dataTables_wrapper{
+  overflow: visible;
+  /*clear: none;*/
+}
+

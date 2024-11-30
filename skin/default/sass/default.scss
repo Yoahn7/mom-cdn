@@ -1,0 +1,1649 @@
+@charset "UTF-8";
+//色值变量，将相似颜色放在一起方便查找，每一个变量对应有.col-和.bg-的class，分别表示颜色和背景色
+$col-fff        :#fff;
+$col-f3f3f3     :#f3f3f3;
+$col-fef0f0     :#fef0f0;
+$col-def4f1     :#def4f1;
+$col-eaeaea     :#eaeaea;
+$col-ddd        :#ddd;
+$col-c4c4c4     :#c4c4c4;
+$col-cacaca     :#cacaca;
+$col-ccc        :#ccc;
+$col-999        :#999;
+$col-777        :#777;
+$col-333        :#333;
+$col-454545     :#454545;
+$col-0084ff     :#0084ff;
+$col-deeffd     :#deeffd;
+$col-00a4ff     :#00a4ff;
+$col-62b5e9     :#62b5e9;
+$col-21b9bb     :#21b9bb;
+$col-23c6c8     :#23c6c8;
+$col-31b0d5     :#31b0d5;
+$col-1ab394     :#1ab394;
+$col-148f76     :#148f76;
+$col-51cd50     :#51cd50;
+$col-00cc66     :#00cc66;
+$col-00B83F     :#00B83F;
+$col-ffa82d     :#ffa82d;
+$col-ffc600     :#ffc600;
+$col-ff9eb2     :#ff9eb2;
+$col-ed5565     :#ed5565;
+$col-ff7836     :#ff7836;
+$col-f75c5c     :#f75c5c;
+$col-ec4758     :#ec4758;
+$col-ff0000     :#ff0000;
+$col-f42020     :#f42020;
+
+//百分比
+$percentage-5   :5%;
+$percentage-50  :50%;
+$percentage-100 :100%;
+
+// 字体大小
+$fontsize-5     :5px;
+$fontsize-10    :10px;
+$fontsize-16    :16px;
+
+$margin-size    :5px;
+$padding-size   :5px;
+
+/*字体图标 S*/
+.fa-shortcut:before{content: "\f0a9";}
+.fa-picture:before{content: "\f03e";}
+.fa-text:before{content: "\f15c";}
+.fa-number:before{content: "\e673"}
+/*图表类：折线图、柱状图、饼状图、仪表盘 S*/
+.fa-line:before,.fa-chart_line:before{content: "\f1fe";}
+.fa-bar:before,.fa-chart_bar:before{content: "\f080";}
+.fa-pie:before,.fa-chart_pie:before{content: "\f200";}
+.fa-gauge:before,.fa-chart_gauge:before{content: "\f14e";}
+/* E */
+.fa-list:before {content: "\f009";}
+.fa-custom:before{content: "\f013";}
+/*字体图标 E*/
+
+/*工具拦*/
+.toolbar-form {
+  .btn {
+    margin-top: $fontsize-10;
+    margin-bottom: 0;
+  }
+  .form-inline .input-group > .form-control {
+    width: 193px;
+  }
+}
+/* form-control */
+.form-inline {
+  >span{
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .form-control {
+    display: inline-block;
+    vertical-align: middle;
+    width: $fontsize-10 * 14;
+    border-radius: 3px;
+    padding: 0 $fontsize-5;
+    font-weight: normal;
+  }
+  .searchGroup{
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom:0;
+  }
+
+  select.form-control {
+    width: auto;
+    min-width: $fontsize-10 * 14;
+  }
+}
+.form-control, .single-line {
+  height: $fontsize-10 * 2.8;
+  padding: 0 $fontsize-5 +3;
+  color: inherit;
+  &:focus{
+    border-color: $col-1ab394 !important;
+  }
+}
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+  background-color: #eeeeee78;
+  opacity: 1;
+}
+.zTreeBox {
+  width: 210px;
+  background-color: #F2F5F7;
+  padding: 10px;
+  border: 1px solid #dcdcdc;
+  margin-right: 10px;
+  .searchGroup{
+    margin-bottom:10px;
+  }
+}
+#ztree,#zTree,.zTreeBox>ul{
+  background-color: #fff;
+  border: 1px solid #dcdcdc;
+}
+.ztree {
+  /*盘存模板，项目信息维护*/
+  margin-bottom: 10px;
+  width: 100%;
+  max-height: 344px;
+  overflow-y: scroll;
+  color: #333;
+}
+
+.ztree li a.curSelectedNode {
+  /*盘存模板，项目信息维护*/
+  background-color: #f4ff92 !important;
+  border-radius: 5px; }
+
+/*-- ibox样式控制 start --*/
+.ibox {
+  min-height: $percentage-100;
+  background: #fff;
+  .ibox-title {
+    color: inherit;
+    padding: $fontsize-10 $fontsize-10 0 $fontsize-10;
+    background: $col-fff;
+    >h5 {
+      text-overflow: ellipsis;
+      font-weight: 800;
+      color: black;
+      padding-left: $fontsize-10;
+      position: relative;
+      font-size: $fontsize-16;
+      line-height: $fontsize-10 * 2;
+      padding-bottom: $fontsize-10;
+      border-bottom: 1px solid $col-eaeaea;
+      &:before {
+        content: "";
+        width: $fontsize-5 - 1;
+        height: $fontsize-10 * 2;
+        background: $col-1ab394;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+
+    >.ibox-tools {
+      display: none;
+      float: right;
+      margin-top: $fontsize-10 * 2;
+      margin-right: $fontsize-5 + 3;
+      position: relative;
+      padding: 0;
+      a {
+        cursor: pointer;
+        margin-left: $fontsize-5;
+        color: $col-c4c4c4;
+      }
+    }
+  }
+  .ibox-content {
+    background-color: $col-fff;
+    #left {
+      box-sizing: border-box;
+      &.leftBox {
+        width: auto;
+        min-width: $fontsize-10 * 16;
+        min-height: $fontsize-10 * 25;
+        overflow: auto;
+        position: relative;
+        background: #e7eaec; }
+      > a {
+        cursor: pointer;
+        position: absolute;
+        right: 8px;
+        top: 2px; }
+    }
+    #right {
+      padding: 0 15px;
+      overflow: auto; }
+  }
+  .ibox-title.gray-line {
+    border-bottom: $fontsize-10 solid $col-f3f3f3;
+    padding-bottom: $fontsize-10;
+  }
+}
+/*ibox样式控制 end*/
+
+/*ibox里的标题*/
+.titName {
+  padding-left: $fontsize-10;
+  position: relative;
+  font-size: $fontsize-16;
+  line-height: 26px;
+  font-weight: bold;
+  padding-bottom: $fontsize-10;
+  border-bottom: 1px solid $col-eaeaea;
+  &:before {
+    content: "";
+    width: 4px;
+    height: $fontsize-10 * 2;
+    background: $col-1ab394;
+    position: absolute;
+    top: 3px;
+    left: 0;
+  }
+  &.int-style {
+    padding-left: 0;
+    &:before{
+      display: none;
+    }
+  }
+  &.no-bor-pagb {
+    border: 0;
+    padding-bottom: 0;
+  }
+
+  .pull-right {
+    margin-bottom: -5px;
+  }
+}
+.titName .toolbar-btns, .toolbar-form .toolbar-btns {
+  margin-top: 0; }
+.toolbar-btns .btn {margin-bottom:0;}  
+
+/*表格里边的btn*/
+.table>tbody+tbody{border-top:none;}
+.table .btn, .datagrid-btable .btn {
+  width: auto;
+  padding: 0 6px;
+  line-height: $fontsize-10 * 2.6;
+  font-size: $fontsize-10 + 2;
+  margin-bottom: 0; 
+}
+
+/*表格*/
+.form-table {
+  border: 1px solid #ddd;
+  margin: 0;
+  tbody > tr > td, tfoot > tr > td, label {
+    vertical-align: middle;
+    margin: 0;
+  }
+  tbody > tr > td {
+    width: $percentage-5 * 7;
+    position: relative;
+    &:nth-of-type(odd) {
+      border-left: 1px solid #eaeaea;
+      border-right: 1px solid #eaeaea;
+    }
+
+    &.active {
+      background: #f9f9f9 !important;
+      text-align: right;
+      font-size: $fontsize-10 + 2;
+      font-weight: bold;
+      vertical-align: middle;
+      line-height: $fontsize-10 * 2.8;
+      width: $percentage-5 * 3;
+      /* 默认宽度15%，如果需要调整请在td上加class="width-30"(30为自己的) */
+    }
+    label{
+      margin-right:8px;
+      div[class^='icheckbox_']{
+        margin-right:3px;
+      }
+    }
+  }
+
+  td.require:before {
+    content: "\*";
+    color: #ff3333;
+    padding-right: 3px;
+    vertical-align: middle;
+    display: inline-block;
+  }
+
+  input[type='checkbox'] {
+    padding-right: 4px;
+  }
+}
+.searchGroup {
+  white-space: nowrap;
+  display: block;
+  height: 30px;
+  position: relative;
+  input[type='text'] {
+    display: inline-block;
+    padding-right: 34px;
+    vertical-align: middle;
+    width:100%;
+    height:100%;
+    color: #949494;
+    font-size: 12px;
+  }
+  .btn {
+    margin: 0;
+    min-width: 0;
+    height: calc(100% - 2px);
+    line-height: 1.57;
+    position: absolute; 
+    right:0;
+    top:1px;
+    vertical-align: top;
+    border-top: 0;
+    border-bottom: 0;
+    &:hover,&:focus,&:active{
+      box-shadow: none;
+      border-top: 0;
+      border-bottom: 0;
+    }
+  }
+  .btn:last-child {
+    border-radius: 0 4px 4px 0;
+  }
+}
+
+/* layer全局弹窗样式*/
+body div.myclass, body div.myclass .layui-layer-content, body div.myclass iframe {
+  border-radius: $fontsize-10;
+}
+.layui-layer-default .layui-layer-title {
+  background-color: $col-1ab394 ;
+  color: #fff3f3;
+}
+
+.layui-layer-default .layui-layer-btn .layui-layer-btn0 {
+  background-color: $col-ffa82d ;
+  color: $col-fff ;
+  border: 0 ;
+}
+
+.layui-layer-default .layui-layer-btn {
+  border-top: 1px solid #ddd;
+}
+
+//prompt类型
+.layui-layer-page.layui-layer-default .layui-layer-content{
+  padding:15px;
+}
+
+.layui-layer-default .layui-layer-input {
+  display: block;
+  width: 230px;
+  height: 36px;
+  margin: 0 auto;
+  line-height: 30px;
+  padding-left: 10px;
+  border: 1px solid #e6e6e6;
+  color: #333;
+}
+.layui-layer-prompt .layui-layer-content{padding:10px;}
+
+/*select2*/
+select.disable,.select2-container--default.select2-container--disabled .select2-selection--single,.select2-container--default.select2-container--disabled .select2-selection--multiple {
+  background-color: transparent;
+  border:none;
+}
+.select2-container--default .select2-selection--multiple {
+  border-color: $col-ccc; }
+
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+  border-color: $col-1ab394 !important; }
+
+.select2-container--default .select2-selection--single {
+  outline: none;
+  height: $fontsize-10 * 2.8;
+  border-color: $col-ccc;}
+
+.select2-container--default:focus .select2-selection--single:focus {
+  border-color: $col-1ab394; }
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+  border: none;
+}
+.select2-container.select2-container--disabled {
+  border:1px solid $col-ccc;
+  border-radius: 3px;
+  background: #eeeeee78;
+}
+
+.select2 .selection:focus {
+  border-color: $col-1ab394;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); }
+
+.select2-results__option {
+  padding: 1px 6px;
+  line-height: 20px;
+  font-size: 13px;
+}
+.select2-search--dropdown .select2-search__field {
+  padding: 0 $fontsize-5 - 1;
+  border-radius: 3px;
+  line-height: 20px;
+  &:focus {
+    outline: 0;
+    border-color: $col-1ab394;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  }
+}
+
+/*鼠标滑过*/
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+  background-color: $col-def4f1;
+  color: $col-1ab394;
+}
+
+/*选中高亮*/
+.select2-container--default .select2-results__option[aria-selected=true] {
+  background-color: $col-1ab394;
+  color: $col-fff;
+}
+
+/*----------- tab选项卡 S -----------*/
+.tab-bar {
+  height:43px;
+  border-bottom: 1px solid $col-eaeaea;
+}
+
+.tab-nav li {
+  float: left;
+  padding: 0 $fontsize-10 * 2;
+  text-align: center;
+  line-height: 42px;
+  font-size: $fontsize-10 + 4;
+  cursor: pointer;
+  border: 1px solid #e3e3e3;
+  border-left: none;
+  background: #f9f9f9;
+  border-bottom: none;
+  position: relative;
+  &:hover, &.active {
+    border-top-color: $col-1ab394;
+    border-bottom: none;
+    background: $col-fff;
+    &:before {
+      border-top-color: $col-1ab394;
+    }
+
+    &:after {
+      border-bottom-color: $col-fff;
+    }
+  }
+
+  &:before,&:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: $percentage-100;
+    height: 1px;
+  }
+
+  &:before {
+    border-top: 1px solid transparent;
+    top: 0;
+  }
+
+  &:after {
+    border-bottom: 1px solid transparent;
+    bottom: -1px;
+  }
+}
+
+.tab-btns li {
+  display: none;
+  &.active {
+    display: block;
+  }
+}
+
+.tab-con > div, .tab-con .tab-con-item {
+  display: none;
+  &.active {
+    display: block;
+  }
+}
+/*----------- tab选项卡end -----------*/
+
+/*----------- 分页样式控制 start -----------*/
+.pagination {
+  margin: 0;
+  > .active {
+    > a, > span {
+      background-color: #f4f4f4;
+      border-color: #ddd;
+      color: $col-333;
+      &:hover, &:focus {
+        background-color: #f4f4f4;
+        border-color: #ddd;
+        color: $col-333;
+      }
+    }
+  }
+
+  > li {
+    > a, > span {
+      &:hover, &:focus {
+        color: $col-333;
+      }
+    }
+  }
+}
+.pagination-detail {
+  display: none;
+  margin: 8px 0;
+  font-size: $fontsize-10 + 4;
+  color: $col-333;
+}
+.pagination-box {
+  margin: $fontsize-10 0 0 $fontsize-10;
+}
+.pagination-roll {
+  line-height: 0;
+  padding: 3px 0;
+}
+
+#pag-sel {
+  width: $fontsize-10 * 6;
+  outline: none;
+}
+.page-list {
+  margin-left: $fontsize-10;
+  line-height: 24px
+}
+.page-info {
+  padding: 3px 0;
+}
+
+.small-page a {
+  display: inline-block;
+  padding: $fontsize-5;
+  line-height: $fontsize-10 * 2;
+  font-size: $fontsize-10 + 2;
+}
+/*----------- 分页样式控制 end -----------*/
+
+/*----------- 附件列表样式 start -----------*/
+.attachment-item{
+  /*float: left;*/
+  width: 230px;
+  height: 36px;
+  line-height: 36px;
+  position: relative;
+  background:#E3EAF6;
+  background-size: $fontsize-16 $fontsize-16;
+  margin:$fontsize-5 $fontsize-10 $fontsize-5 0;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  font-size:0;
+  display: inline-block;
+}
+.attachment-icon{
+  width:32px;
+  height:32px;
+  background: url("../../../images/sprites/fileico.png");
+  background-size: 927px 70px;
+}
+.attachment-icon,.attachment-con{
+  display: inline-block;
+  vertical-align: middle;
+}
+.fileico_attachment,.fileico_file{
+  background-position:0 -4px;
+}
+.fileico_png{
+  background-position:-64px -36px;
+}
+.fileico_image,.fileico_jpg{
+  background-position:0 -36px;
+}
+.fileico_gif{
+  background-position:-32px -36px;
+}
+.fileico_bmp{
+  background-position:-96px -36px;
+}
+.fileico_tif{
+  background-position:-128px -36px;
+}
+.fileico_doc{
+  background-position:-64px -4px;
+}
+.fileico_xls{
+  background-position:-32px -4px;
+}
+.fileico_ppt{
+  background-position:-96px -4px;
+}
+.fileico_pdf{
+  background-position:-512px -4px;
+}
+.fileico_zip{
+  background-position:-192px -4px;
+}
+.fileico_7z{
+  background-position:-128px -4px;
+}
+.fileico_rar{
+  background-position:-161px -4px;
+}
+.fileico_audio{
+  background-position:-896px -4px;
+}
+.fileico_video{
+  background-position:-863px -4px;
+}
+.fileico_txt{
+  background-position:-672px -4px;
+}
+.attachment-con{
+  line-height: $fontsize-10 * 3;
+  padding: 3px 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #666;
+  font-size: $fontsize-10 + 2;
+  width:198px;
+}
+.attachment-mask{
+  position: absolute;
+  top: 0;
+  left: 32px;
+  height: 36px;
+  background: rgba(0,0,0,.5);
+  right: 0;
+  line-height: 36px;
+  text-align: right;
+  padding-right: 4px;
+  display: none;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+}
+.attachment-mask .fa{
+  color: $col-fff;
+  padding:3px;
+  font-size: $fontsize-10 + 4;
+  margin:8px 3px;
+
+}
+.attachment-item:hover  .attachment-mask{
+  display: block;
+  cursor: pointer;
+}
+/*----------- 附件列表样式 End -----------*/
+
+.inputFocus, select {
+  outline: none;
+  border: 1px solid #e5e6e7;
+  background: $col-fff;
+  padding: $fontsize-5 - 1 $fontsize-10 + 2;
+  height: $fontsize-10 * 2.8;
+  border-radius: 6px;
+  font-size: $fontsize-10 + 2;
+  &:focus{
+    border: 1px solid $col-1ab394 !important;
+    box-shadow: 0 0 3px $col-1ab394;
+  }
+}
+
+input[type="file"]:focus, input[type="radio"]:focus, input[type="checkbox"]:focus {
+  outline: none;
+}
+
+/*灰色选中*/
+.gray-check-1 {
+  color: $col-cacaca;
+  font-size: $fontsize-16;
+  &:before {
+    content: "\f046";
+  }
+}
+/*灰色不选中*/
+.gray-check-, .gray-check-0 {
+  color: $col-cacaca;
+  font-size: $fontsize-16;
+  &:before {
+    content: "\f096";
+  }
+}
+.isChecked, .unCheck {
+  color: #cacaca;
+  font-size: $fontsize-16;
+}
+
+.split-line>li {
+  float:left;
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    top: $percentage-50;
+    right: 0;
+    width: 1px;
+    height: $fontsize-10 * 2;
+    margin-top: -10px;
+    background: #eee;
+  }
+  &:nth-last-of-type(1) {
+    &:after {
+      width:0;
+    }
+  }
+}
+
+*.row-hover:hover{ background-color: #e7f4f9;} 
+*.row-hover.active, *.row-hover.active:hover{ background-color: #cef1ff; /*#dfe6f3*/ }
+
+.webuploader-element-invisible {
+  opacity: 0;
+}
+
+/*---------------------- 颜色控制 start ----------------------*/
+.col-fff, .white, .col-white{
+  color: $col-fff !important;
+  &:hover,&:visited,&:active,&:focus{
+    color:darken($col-fff,12%) !important;
+  }
+}
+.bg-fff, .bg-white{
+  background-color: $col-fff;
+  border-color: darken($col-fff,12%);
+  color: #676a6c !important;
+  &:hover{
+    background-color: #fafafa;
+    border-color: darken($col-fff,18%);
+    color: inherit !important;
+  }
+  &:active:hover {
+    background-color: darken($col-fff,18%);
+  }
+  &.btn-outline:hover {
+    color: #c7c7c7 !important;
+  }
+}
+
+.col-f3f3f3, .col-f3, .col-gray{
+  color: $col-f3f3f3 !important;
+  &:hover,&:visited,&:active,&:focus{
+    color:darken($col-f3f3f3,12%) !important;
+  }
+}
+.bg-f3f3f3, .bg-f3, .bg-gray{
+  background-color: $col-f3f3f3;
+  border-color: darken($col-f3f3f3,12%);
+  color: inherit !important;
+  &:hover{
+    background-color:darken($col-f3f3f3,6%);
+    color: inherit !important;
+  }
+  &:active:hover {
+    background-color: darken($col-f3f3f3,18%);
+  }
+  &.btn-outline {
+    color: darken($col-f3f3f3,12%) !important;
+  }
+}
+
+.col-fef0f0{
+  color: #f56c6c !important;
+  &:hover,&:visited,&:active,&:focus{
+    color:darken($col-fef0f0,12%) !important;
+  }
+}
+.bg-fef0f0{
+  background-color: $col-fef0f0;
+  border-color: #fbc4c4; 
+  color: #f56c6c !important;
+  &:hover{
+    background-color:#f56c6c;
+    color: #fff !important;
+  }
+  &:active:hover {
+    background-color: darken($col-fef0f0,18%);
+  }
+  &.btn-outline {
+    color: #f56c6c !important; 
+  }
+}
+
+.col-def4f1{
+  color: $col-def4f1 !important;
+  &:hover,&:visited,&:active,&:focus{
+    color:darken($col-def4f1,12%) !important;
+  }
+}
+.bg-def4f1{
+  background-color: $col-def4f1;
+  border-color: darken($col-def4f1,12%);
+  color: inherit !important;
+  &:hover{
+    background-color:darken($col-def4f1,6%);
+    color: inherit !important;
+  }
+  &:active:hover {
+    background-color: darken($col-def4f1,22%);
+  }
+  &.btn-outline {
+    color: darken($col-def4f1,12%) !important;
+  }
+}
+
+.col-eaeaea{
+  color: $col-eaeaea !important;
+  &:hover,&:visited,&:active,&:focus{
+    color:darken($col-eaeaea,12%) !important;
+  }
+}
+.bg-eaeaea{
+  background-color: $col-eaeaea;
+  border-color: darken($col-eaeaea,12%);
+  color: inherit !important;
+  &:hover{
+    background-color:darken($col-eaeaea,6%);
+  }
+  &:active:hover {
+    background-color: darken($col-eaeaea,22%);
+  }
+  &.btn-outline {
+    color: darken($col-eaeaea,12%) !important;
+  }
+}
+
+.col-ddd{
+  color: $col-ddd !important;
+  &:hover,&:visited,&:active,&:focus{
+    color:darken($col-ddd,12%) !important;
+  }
+}
+.bg-ddd{
+  background-color: $col-ddd;
+  border-color: darken($col-ddd,12%); 
+  color: inherit !important;
+  &:hover{
+    background-color:darken($col-ddd,6%);
+  }
+  &:active:hover {
+    background-color: darken($col-ddd,22%);
+  }
+  &.btn-outline {
+    color: darken($col-ddd,12%) !important; 
+  }
+}
+
+.col-c4c4c4{
+  color: $col-c4c4c4 !important;
+  &:hover,&:visited,&:active,&:focus{
+    color:darken($col-c4c4c4,12%) !important;
+  }
+}
+.bg-c4c4c4{
+  background-color: $col-c4c4c4;
+  border-color: darken($col-c4c4c4,12%); 
+  color: $col-fff !important;
+  &:hover{
+    background-color:darken($col-c4c4c4,6%);
+  }
+  &:active:hover {
+    background-color: darken($col-c4c4c4,22%);
+  }
+  &.btn-outline {
+    color: darken($col-c4c4c4,12%) !important; 
+  }
+}
+
+.col-cacaca{
+  color: $col-cacaca !important;
+  &:hover,&:visited,&:active,&:focus{
+    color:darken($col-cacaca,12%) !important;
+  }
+}
+.bg-cacaca{
+  background-color: $col-cacaca;
+  border-color: darken($col-cacaca,12%); 
+  color: $col-fff !important;
+  &:hover{
+    background-color:darken($col-cacaca,6%);
+  }
+  &:active:hover {
+    background-color: darken($col-cacaca,22%);
+  }
+  &.btn-outline {
+    color: darken($col-cacaca,12%) !important; 
+  }
+}
+
+.col-ccc{
+  color: $col-ccc !important;
+  &:hover,&:visited,&:active,&:focus{
+    color: darken($col-ccc,12%) !important;
+  }
+}
+.bg-ccc{
+  background-color: $col-ccc;
+  border-color: darken($col-ccc,12%);
+  color: $col-fff !important;
+  &:hover{
+    background-color:darken($col-ccc,6%);
+  }
+  &:active:hover {
+    background-color: darken($col-ccc,22%);
+  }
+  &.btn-outline {
+    color: darken($col-ccc,12%) !important;
+  }
+}
+
+.col-999, .col-999999{
+  color: $col-999 !important;
+  &:hover,&:visited,&:active,&:focus{
+    color:darken($col-999,12%) !important;
+  }
+}
+.bg-999, .bg-999999{
+  background-color: $col-999;
+  border-color: darken($col-999,12%);
+  color: $col-fff !important;
+  &:hover{
+    background-color:darken($col-999,6%);
+  }
+  &:active:hover {
+    background-color: darken($col-999,22%);
+  }
+  &.btn-outline {
+    color: darken($col-999,12%) !important;
+  }
+}
+
+.col-777, .col-777777{
+  color: $col-777 !important;
+  &:hover,&:visited,&:active,&:focus{
+    color:darken($col-777,12%) !important;
+  }
+}
+.bg-777, .bg-777777{
+  background-color: $col-777;
+  border-color: darken($col-777,12%);
+  color: $col-fff !important;
+  &:hover{
+    background-color:darken($col-777,6%);
+  }
+  &:active:hover {
+    background-color: darken($col-777,22%);
+  }
+  &.btn-outline {
+    color: darken($col-777,12%) !important;
+  }
+}
+
+.col-333, .col-333333{
+  color: $col-333 !important;
+  &:hover,&:visited,&:active,&:focus{
+    color:darken($col-333,12%) !important;
+  }
+}
+.bg-333, .bg-333333{
+  background-color: $col-333;
+  border-color: darken($col-333,12%); 
+  color: $col-fff !important;
+  &:hover{
+    background-color:darken($col-333,6%);
+  }
+  &:active:hover {
+    background-color: darken($col-333,22%);
+  }
+  &.btn-outline {
+    color: darken($col-333,12%) !important; 
+  }
+}
+
+.col-454545{
+  color: $col-454545 !important;
+  &:hover,&:visited,&:active,&:focus{
+    color: #000 !important;
+  }
+}
+.bg-454545{
+  background-color: $col-454545;
+  border-color: darken($col-454545,12%); 
+  color: $col-fff !important;
+  &:hover{
+    background-color: #000;
+  }
+  &:active:hover {
+    background-color: darken($col-454545,22%);
+  }
+  &.btn-outline {
+    color: darken($col-454545,12%) !important; 
+  }
+}
+
+.col-0084ff{
+  color: $col-0084ff !important;
+  &:hover,&:visited,&:active,&:focus{
+    color:darken($col-0084ff,12%) !important;
+  }
+}
+.bg-0084ff{
+  background-color: $col-0084ff;
+  border-color: darken($col-0084ff,12%);
+  color: $col-fff !important;
+  &:hover{
+    background-color:darken($col-0084ff,6%);
+  }
+  &:active:hover {
+    background-color: darken($col-0084ff,22%);
+  }
+  &.btn-outline {
+    color: darken($col-0084ff,12%) !important;
+  }
+}
+
+.col-deeffd{
+  color: $col-deeffd !important;
+  &:hover,&:visited,&:active,&:focus{
+    color:darken($col-deeffd,12%) !important;
+  }
+}
+.bg-deeffd{
+  background-color: $col-deeffd;
+  border-color: darken($col-deeffd,12%); 
+  color: #2196f3 !important;
+  &:hover{
+    background-color:darken($col-deeffd,2%);
+  }
+  &:active:hover {
+    background-color: darken($col-deeffd,10%);
+  }
+  &.btn-outline {
+    color: 2196f3 !important; 
+  }
+}
+
+.col-00a4ff, .col-blue{
+  color: $col-00a4ff !important;
+  &:hover,&:visited,&:active,&:focus{
+    color:darken($col-00a4ff,12%) !important;
+  }
+}
+.bg-00a4ff, .bg-blue{
+  background-color: $col-00a4ff;
+  border-color: darken($col-00a4ff,12%); 
+  color: $col-fff !important;
+  &:hover{
+    background-color:darken($col-00a4ff,6%);
+  }
+  &:active:hover {
+    background-color: darken($col-00a4ff,22%);
+  }
+  &.btn-outline {
+    color: darken($col-00a4ff,12%) !important; 
+  }
+}
+
+.col-62b5e9{
+  color: $col-62b5e9 !important;
+  &:hover,&:visited,&:active,&:focus{
+    color: #268dcd !important;
+  }
+}
+.bg-62b5e9, .btn-check{
+  background-color: $col-62b5e9;
+  border-color: $col-62b5e9;
+  color: $col-fff !important;
+  &:hover{
+    background-color: darken($col-62b5e9,6%);
+    color: $col-fff;
+  }
+  &:active:hover {
+    background-color: darken($col-62b5e9,22%);
+  }
+  &.btn-outline {
+    color: $col-62b5e9 !important;
+  }
+}
+
+.col-21b9bb{
+  color: $col-21b9bb !important;
+  &:hover,&:visited,&:active,&:focus{
+    color:darken($col-21b9bb,12%) !important;
+  }
+}
+.bg-21b9bb{
+  background-color: $col-21b9bb;
+  border-color: darken($col-21b9bb,12%);
+  color: $col-fff !important;
+  &:hover{
+    background-color:darken($col-21b9bb,6%);
+  }
+  &:active:hover {
+    background-color: darken($col-21b9bb,22%);
+  }
+  &.btn-outline {
+    color: darken($col-21b9bb,12%) !important;
+  }
+}
+
+.col-23c6c8{
+  color: $col-23c6c8 !important;
+  &:hover,&:visited,&:active,&:focus{
+    color:darken($col-23c6c8,12%) !important;
+  }
+}
+.bg-23c6c8{
+  background-color: $col-23c6c8; 
+  border-color: darken($col-23c6c8,12%);
+  color: $col-fff !important;
+  &:hover{
+    background-color:darken($col-23c6c8,6%);
+  }
+  &:active:hover {
+    background-color: darken($col-23c6c8,22%);
+  }
+  &.btn-outline {
+    color: darken($col-23c6c8,12%) !important;
+  }
+}
+
+.col-31b0d5{
+  color: $col-31b0d5 !important;
+  &:hover,&:visited,&:active,&:focus{
+    color: #00a0ae !important;
+  }
+}
+.bg-31b0d5{
+  background-color: $col-31b0d5; 
+  border-color: darken($col-31b0d5,12%);
+  color: $col-fff !important;
+  &:hover{
+    background-color: darken($col-31b0d5,6%);
+  }
+  &:active:hover {
+    background-color: darken($col-31b0d5,22%);
+  }
+  &.btn-outline {
+    color: darken($col-31b0d5,12%) !important;
+  }
+}
+
+.col-1ab394, .col-1cb394{
+  color: $col-1ab394 !important;
+  &:hover,&:visited,&:active,&:focus{
+    color: $col-148f76 !important;
+  }
+}
+.bg-1ab394, .bg-1cb394{
+  background-color: $col-1ab394;
+  border-color:$col-1ab394;
+  color: $col-fff !important;
+  &:hover{
+    background-color: darken($col-1ab394,6%);
+  }
+  &:active:hover {
+    background-color: darken($col-1ab394,22%);
+  }
+  &.btn-outline {
+    color: $col-1ab394 !important;
+  }
+}
+
+.col-148f76{
+  color: $col-148f76 !important;
+  &:hover,&:visited,&:active,&:focus{
+    color:darken($col-148f76,12%) !important;
+  }
+}
+.bg-148f76{
+  background-color: $col-148f76;
+  border-color: darken($col-148f76,12%);
+  color: $col-fff !important;
+  &:hover{
+    background-color:darken($col-148f76,6%);
+  }
+  &:active:hover {
+    background-color: darken($col-148f76,22%);
+  }
+  &.btn-outline {
+    color: darken($col-148f76,12%) !important;
+  }
+}
+
+.col-51cd50{
+  color: $col-51cd50 !important;
+  &:hover,&:visited,&:active,&:focus{
+    color: #2c9d2b !important;
+  }
+}
+.bg-51cd50{
+  background-color: $col-51cd50;
+  border-color: darken($col-51cd50,12%);
+  color: $col-fff !important;
+  &:hover{
+    background-color: darken($col-51cd50,6%);
+  }
+  &:active:hover {
+    background-color: darken($col-51cd50,22%);
+  }
+  &.btn-outline {
+    color: darken($col-51cd50,12%) !important;
+  }
+}
+
+.col-0c6,.col-00cc66 {
+  color: $col-00cc66 !important;
+  &:hover,&:visited,&:active,&:focus{
+    color: #009b4d !important;
+  }
+}
+.bg-0c6,.bg-00cc66 {
+  background-color: $col-00cc66;
+  border-color: darken($col-00cc66,12%);
+  color: $col-fff !important;
+  &:hover{
+    background-color: darken($col-00cc66,6%);
+  }
+  &:active:hover {
+    background-color: darken($col-00cc66,22%);
+  }
+  &.btn-outline {
+    color: darken($col-00cc66,12%) !important;
+  }
+}
+
+.col-00b83f, .col-00B83F{
+  color: $col-00B83F !important;
+  &:hover,&:visited,&:active,&:focus{
+    color:darken($col-00B83F,12%) !important;
+  }
+}
+.bg-00b83f, .bg-00B83F{
+  background-color: $col-00B83F;
+  border-color: darken($col-00B83F,12%);
+  color: $col-fff !important;
+  &:hover{
+    background-color:darken($col-00B83F,6%);
+  }
+  &:active:hover {
+    background-color: darken($col-00B83F,22%);
+  }
+  &.btn-outline {
+    color: darken($col-00B83F,12%) !important;
+  }
+}
+
+.col-ffa82d{
+  color: $col-ffa82d !important;
+  &:hover,&:visited,&:active,&:focus{
+    color: #f48f00 !important;
+  }
+}
+.bg-ffa82d{
+  background-color: $col-ffa82d;
+  border-color: darken($col-ffa82d,12%);
+  color: $col-fff !important;
+  &:hover{
+    background-color: darken($col-ffa82d,6%);
+  }
+  &:active:hover {
+    background-color: darken($col-ffa82d,22%);
+  }
+  &.btn-outline {
+    color: darken($col-ffa82d,12%) !important;
+  }
+}
+
+.col-ffc600{
+  color: $col-ffc600 !important;
+  &:hover,&:visited,&:active,&:focus{
+    color: #d3a400 !important;
+  }
+}
+.bg-ffc600{
+  background-color: $col-ffc600;
+  border-color: darken($col-ffc600,12%);
+  color: $col-fff !important;
+  &:hover{
+    background-color: darken($col-ffc600,6%);
+  }
+  &:active:hover {
+    background-color: darken($col-ffc600,22%);
+  }
+  &.btn-outline {
+    color: darken($col-ffc600,12%) !important;
+  }
+}
+
+.col-ff9eb2{
+  color: $col-ff9eb2 !important;
+  &:hover,&:visited,&:active,&:focus{
+    color:darken($col-ff9eb2,12%) !important;
+  }
+}
+.bg-ff9eb2{
+  background-color: $col-ff9eb2;
+  border-color: darken($col-ff9eb2,12%);
+  color: $col-fff !important;
+  &:hover{
+    background-color:darken($col-ff9eb2,6%);
+  }
+  &:active:hover {
+    background-color: darken($col-ff9eb2,22%);
+  }
+  &.btn-outline {
+    color: darken($col-ff9eb2,12%) !important;
+  }
+}
+
+.col-ff7836{
+  color: $col-ff7836 !important;
+  &:hover,&:visited,&:active,&:focus{
+    color: #e6570f !important;
+  }
+}
+.bg-ff7836{
+  background-color: $col-ff7836;
+  border-color: darken($col-ff7836,12%);
+  color: $col-fff !important;
+  &:hover{
+    background-color: darken($col-ff7836,6%);
+  }
+  &:active:hover {
+    background-color: darken($col-ff7836,22%);
+  }
+  &.btn-outline {
+    color: darken($col-ff7836,12%) !important;
+  }
+}
+
+.col-f75c5c{
+  color: $col-f75c5c !important;
+  &:hover,&:visited,&:active,&:focus{
+    color: $col-f42020 !important;
+  }
+}
+.bg-f75c5c{
+  background-color: $col-f75c5c;
+  border-color: darken($col-f75c5c,12%);
+  color: $col-fff !important;
+  &:hover{
+    background-color: darken($col-f75c5c,6%);
+  }
+  &:active:hover {
+    background-color: darken($col-f75c5c,22%);
+  }
+  &.btn-outline {
+    color: darken($col-f75c5c,12%) !important;
+  }
+}
+
+.col-ec4758{
+  color: $col-ec4758 !important;
+  &:hover,&:visited,&:active,&:focus{
+    color:darken($col-ec4758,12%) !important;
+  }
+}
+.bg-ec4758{
+  background-color: $col-ec4758;
+  border-color: darken($col-ec4758,12%);
+  color: $col-fff !important;
+  &:hover{
+    background-color:darken($col-ec4758,6%);
+  }
+  &:active:hover {
+    background-color: darken($col-ec4758,22%);
+  }
+  &.btn-outline {
+    color: darken($col-ec4758,12%) !important;
+  }
+}
+
+.col-ff0000, .col-red, .btn-outline.col-ff0000, .btn-outline.col-red  {
+  color: $col-ff0000 !important;
+  &:hover,&:visited,&:active,&:focus{
+    color: #ce0202 !important;
+  }
+}
+.bg-ff0000, .bg-red {
+  background-color: $col-ff0000;
+  border-color: darken($col-ff0000,12%);
+  color: $col-fff !important;
+  &:hover {
+    background-color: darken($col-ff0000,6%);
+  }
+  &:active:hover {
+    background-color: darken($col-ff0000,22%);
+  }
+  &.btn-outline {
+    color: darken($col-ff0000,12%) !important;
+  }
+}
+
+.col-f42020{
+  color: $col-f42020 !important;
+  &:hover,&:visited,&:active,&:focus{
+    color:darken($col-f42020,12%) !important;
+  }
+}
+.bg-f42020{
+  background-color: $col-f42020;
+  border-color: darken($col-f42020,12%);
+  color: $col-fff !important;
+  &:hover{
+    background-color:darken($col-f42020,12%);
+  }
+  &.btn-outline {
+    color: darken($col-f42020,12%) !important;
+  }
+}
+/*颜色控制 end*/
+
+/*全局按钮控制 start*/
+.btn {
+  margin: 0 3px;
+  padding: 0 $fontsize-5;
+  line-height: $fontsize-10 * 2.6;
+  min-width: $fontsize-10 * 5.4;
+  border-radius: 3px;
+  font-size:14px;
+  color: #6b6b6b; 
+  &.disabled, &.disabled:hover{
+    cursor: not-allowed;
+    border-color: #bebbbb !important;
+    background: $col-ddd !important;
+    color: #807c7c !important ;
+  }
+  &.active.hover, &.active:visited, &.active:focus, &:active.hover, &:active:focus, 
+  &:hover,&:visited,&:active, &:focus{
+    outline: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+  }
+
+  & i {
+    display: inline-block;
+    min-width: $fontsize-16;
+    min-height: $fontsize-16;
+    font-size: $fontsize-10 + 4;
+    vertical-align: middle;
+    line-height: $fontsize-10 + 4;
+  }
+}
+button.btn{
+  &:hover,&:visited,&:active,&:focus{
+    color: #fff;
+  }
+}
+
+.btn-lg{
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.42857143;
+  border-radius: 6px;
+}
+.btn-sm{
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}
+.btn-xs{
+  padding: 1px 5px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.btn-link, .btn-outline.btn-link {
+  color: #1890ff;
+  &:hover,&:visited,&:active,&:focus{
+    color: #40a9ff !important;
+  }
+  &.btn-outline:hover,&.btn-outline:visited,&.btn-outline:active,&.btn-outline:focus{
+    color:inherit !important;
+  }
+}
+button.btn-link:hover, button.btn-link:focus {
+  text-decoration: none;
+}
+
+.btn-white, button.btn-white {
+  color: #676a6c;
+  border-color: #e7eaec;
+  &:hover,&:visited,&:active,&:focus{
+    background-color: $col-fff;
+    border-color: #d2d2d2;
+    color: $col-333 !important;
+  }
+  &.btn-outline:hover,&.btn-outline:visited,&.btn-outline:active{
+    color:inherit;
+    background-color: #e6e6e6;
+  }
+}
+
+.btn-default, button.btn-default {
+  background-color: #fff;
+  border-color: #ddd;
+  color: #676a6c;
+  &:hover,&:visited,&:active,&:focus{
+    background-color: rgb(248, 248, 250);
+    border-color: #d2d2d2;
+    color: $col-333 !important;
+  }
+  &.btn-outline:hover,&.btn-outline:visited,&.btn-outline:active{
+    color:inherit;
+    background-color: #d2d2d2;
+  }
+}
+
+.btn-primary {
+  background-color: $col-31b0d5;
+  border-color: $col-31b0d5;
+  color: $col-fff;
+  &:hover,&:visited,&:active,&:focus{
+    background-color: darken($col-31b0d5,6%);
+    border-color: #25a4ca;
+    color: $col-fff;
+  }
+  &:active:hover {
+    background-color: darken($col-31b0d5,10%);
+  }
+  &.btn-outline {
+    color: #25a4ca;
+  }
+}
+.btn-success, .btn-add {
+  background-color: $col-1ab394;
+  border-color: $col-1ab394;
+  color: $col-fff;
+  &:hover,&:visited,&:active,&:focus{
+    background-color: #18a689;
+    border-color: #18a689;
+    color: $col-fff;
+  }
+  &:active:hover {
+    background-color: darken($col-1ab394,10%);
+  }
+  &.btn-outline {
+    color: $col-1ab394;
+  }
+}
+.btn-info {
+  background-color: $col-23c6c8;
+  border-color: $col-23c6c8;
+  color: $col-fff;
+  &:hover,&:visited,&:active,&:focus{
+    background-color: $col-21b9bb;
+    border-color: $col-21b9bb;
+    color: $col-fff;
+  }
+  &:active:hover {
+    background-color: darken($col-23c6c8,10%);
+  }
+  &.btn-outline {
+    color: $col-21b9bb;
+  }
+}
+.btn-warning, .btn-change, .btn-edit {
+  background-color: $col-ffa82d;
+  border-color: $col-ffa82d;
+  color: $col-fff;
+  &:hover,&:visited,&:active,&:focus {
+    background-color: darken($col-ffa82d,6%);
+    color: $col-fff;
+  }
+  &:active:hover {
+    background-color: darken($col-ffa82d,22%);
+  }
+  &.btn-outline {
+    color: $col-ffa82d;
+  }
+}
+.btn-danger, .btn-delete {
+  background-color: $col-ed5565;
+  border-color: $col-ed5565;
+  color: $col-fff;;
+  &:hover,&:visited,&:active,&:focus{
+    background-color: $col-ec4758;
+    border-color: $col-ec4758;
+    color: $col-fff;
+  }
+  &:active:hover {
+    background-color: darken($col-ed5565,22%);
+  }
+  &.btn-outline {
+    color: $col-ec4758;
+  }
+}
+
+.btn-outline {
+  background-color: transparent;
+  transition: all .5s;
+  &:hover,&:visited,&:active {
+    color: $col-fff !important;
+  }
+}
+/*全局按钮控制 E*/
+.bottom-shadow:hover,.bottom-shadow:focus,.bottom-shadow.active, .ibox-content .open .dropdown-toggle.btn-white.bottom-shadow{
+  box-shadow: 0 3px 1px 1px gainsboro;
+}
+
+#refresh-btn {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

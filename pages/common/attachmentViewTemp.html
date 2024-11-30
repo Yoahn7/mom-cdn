@@ -1,0 +1,14 @@
+<!--附件列表模板页面-->
+{{ each rows as item index }}
+<li class="attachment-item clearfix" data-id="{{item.id}}"  title="{{item.fileName}}">
+    <div class="attachment-icon {{item.icon}}"></div>
+    <div class="attachment-con"  >
+        {{item.fileName}}
+    </div>
+    <div class="attachment-mask">
+        <a href="javascript:;" class="file-browse fa" data-fileType="{{item.icon}}"> <i class="iconfont  icon-browse " aria-hidden="true" title="预览"></i></a>
+        <i class="fa fa-arrow-down file-download" aria-hidden="true" title="下载"></i>
+        <i class="fa fa-close file-delete" aria-hidden="true" title="删除"></i>
+    </div>
+</li>
+{{ /each }}
