@@ -1,25 +1,26 @@
 {
     name: "企业基本信息",
-    parentId: "0",
+    pId: "0",
     id: "04",
+    open: true
   },
   {
     name: "工商信息",
-    parentId: "04",
+    pId: "04",
     id: "040",
   },
   {
     name: "注册信息",
-    parentId: "040",
+    pId: "040",
     id: "0400",
   },
   {
     name: "股东信息",
-    parentId: "040",
+    pId: "040",
     id: "0401",
   },
   {
     name: "高管信息",
-    parentId: "040",
+    pId: "040",
     id: "0402",
   }
